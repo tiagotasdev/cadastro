@@ -24,8 +24,17 @@
                     <a href="/categorias" class="btn btn-primary">Cadatre suas categorias</a>
                 </div>
             </div>
+            <div class="card border border-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Cadastro de Clientes</h5>
+                    <p class="card-text">
+                        Cadastre os seus clientes
+                    </p>
+                    <a href="/clientes" class="btn btn-primary">Cadastre seus clientes</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </div> 
 </div>
 
 

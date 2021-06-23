@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControladorProduto;
 use App\Http\Controllers\ControladorCategoria;
+use App\Http\Controllers\ControladorCliente;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +26,6 @@ Route::post('/categorias', [ControladorCategoria::class, 'store']);
 Route::get('/categorias/apagar/{id}', [ControladorCategoria::class, 'destroy']);
 Route::get('/categorias/editar/{id}', [ControladorCategoria::class, 'edit']);
 Route::post('/categorias/{id}', [ControladorCategoria::class, 'update']);
+Route::get('/novocliente', [ControladorCliente::class, 'create']);
+Route::get('/clientes', [ControladorCliente::class, 'index']);
+Route::post('/clientes', [ControladorCliente::class, 'store']);
