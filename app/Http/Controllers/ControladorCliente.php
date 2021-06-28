@@ -36,12 +36,29 @@ class ControladorCliente extends Controller
      */
     public function store(Request $request)
     {
+             $regras = [
+                'nome' => 'required|min:3|max:30',
+                'idade' => 'required',
+                'endereco' => 'required|min:5',
+                'email' => 'required|email'
+            ];
+            $mensagens = [
+                'required' => 'O campo :attribute não pode estar em branco',
+                'nome.required' => 'O nome é requerido',
+                'nome.min' => 'É necessário no minimo 3 caracteres no nome.',
+                'email.required' => 'Digite um endereço de e-mail',
+                'email.email' => 'Digite um endereço de e-mail valido!'
+            ];
+            $request->validate($regras, $mensagens);
+       
+/*        
         $request->validate([
             'nome' => 'required|min:3|max:30',
             'idade' => 'required',
             'endereco' => 'required|min:5',
             'email' => 'required|email'
         ]);
+*/        
 
         $cliente = new Cliente();
         $cliente->nome = $request->input('nome');
